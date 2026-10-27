@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalLens Tourism — Plan Less. Explore More. Experience Local.</title>
+  <meta name="description" content="LocalLens creates personalized, budget-friendly and dynamic travel itineraries powered by AI, live weather telemetry, and verified local guides.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="section-container nav-wrapper">
+      <a href="#home" class="brand-logo" aria-label="LocalLens Tourism Home">
+        <div class="brand-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+        <span>Local<span class="highlight">Lens</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#sample-trip" class="nav-link">Sample Trip</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#why-us" class="nav-link">Why LocalLens?</a>
+        <a href="#partners" class="nav-link">Partners</a>
+        <a href="#sustainability" class="nav-link">Sustainability</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm btn-open-planner">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+          Plan My Trip
+        </button>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. Hero Section
+       ========================================================================= -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-wrapper">
+      <img 
+        src="https://images.unsplash.com/photo-1596405344148-2d0ae589c372?q=80&w=2000&auto=format&fit=crop" 
+        alt="Lush green mist-clad mountain valley in Eastern Ghats India" 
+        class="hero-bg-image"
+      >
+      <div class="hero-overlay"></div>
+      <div class="hero-particles"></div>
+    </div>
+
+    <div class="section-container hero-content">
+      <div class="hero-pill-badge">
+        <span class="pulse-dot"></span>
+        <span>AI-Powered Hyperlocal Travel Intelligence • India 2026</span>
+      </div>
+
+      <h1 class="hero-title">
+        Plan Less. Explore More.<br>
+        <span class="text-gradient-alt">Experience Local.</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Travel designed around your time, budget, and authentic local vibes.
+      </p>
+
+      <p class="hero-desc">
+        LocalLens creates personalized, budget-friendly and dynamic travel itineraries based on your interests, available time and budget. Powered by real-time weather, crowd telemetry, and direct local business connections.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg btn-open-planner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Plan My Trip
+        </button>
+        <a href="#destinations" class="btn btn-ghost-white btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          Explore Destinations
+        </a>
+      </div>
+
+      <!-- Hero Interactive Quick Trip Widget -->
+      <div class="hero-planner-card">
+        <div class="planner-fields-grid">
+          <div class="planner-field">
+            <label class="planner-label" for="heroDestSelect">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Where to?
+            </label>
+            <div class="planner-input-box">
+              <select id="heroDestSelect">
+                <option value="Araku Valley, Andhra Pradesh" selected>Araku Valley, Andhra Pradesh</option>
+                <option value="Munnar & Western Ghats, Kerala">Munnar & Ghats, Kerala</option>
+                <option value="Spiti Valley, Himachal Pradesh">Spiti Valley, Himachal</option>
+                <option value="Hampi Heritage, Karnataka">Hampi Heritage, Karnataka</option>
+                <option value="Ziro Valley, Arunachal Pradesh">Ziro Valley, Arunachal</option>
+                <option value="Gokarna Coastal, Karnataka">Gokarna Coastal, Karnataka</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="planner-field">
+            <label class="planner-label" for="heroDaysSelect">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Duration
+            </label>
+            <div class="planner-input-box">
+              <select id="heroDaysSelect">
+                <option value="2 Days" selected>2 Days (Weekend Escape)</option>
+                <option value="4 Days">4 Days (Extended Trail)</option>
+                <option value="7 Days">7 Days (Deep Cultural Immersion)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="planner-field">
+            <label class="planner-label" for="heroBudgetSelect">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              Budget Level
+            </label>
+            <div class="planner-input-box">
+              <select id="heroBudgetSelect">
+                <option value="₹1,800/day (Backpacker)">₹1,800 / day (Backpacker)</option>
+                <option value="₹3,500/day (Explorer)" selected>₹3,500 / day (Explorer)</option>
+                <option value="₹6,000/day (Eco-Comfort)">₹6,000 / day (Eco-Comfort)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="heroGenerateBtn" style="height: 52px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            Generate AI Plan
+          </button>
+        </div>
+
+        <div class="planner-quick-tags">
+          <span class="quick-tag-label">Vibe Filters:</span>
+          <button class="quick-tag-btn active" data-vibe="Nature & Coffee">🌿 Nature & Coffee</button>
+          <button class="quick-tag-btn" data-vibe="Tribal Culture & Folk">🪕 Tribal Culture</button>
+          <button class="quick-tag-btn" data-vibe="Hidden Caves & Treks">🧗 Caves & Waterfalls</button>
+          <button class="quick-tag-btn" data-vibe="Indigenous Cuisine">🍲 Authentic Food</button>
+          <button class="quick-tag-btn" data-vibe="Serene & Low Crowd">🕊️ Off-Beat Peace</button>
+        </div>
+      </div>
+
+      <!-- Trust Bar -->
+      <div class="hero-trust-bar">
+        <div class="trust-item">
+          <span class="trust-number">50,000+</span>
+          <span class="trust-label">Trips Planned</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">₹2.4 Cr+</span>
+          <span class="trust-label">Direct to Local Hosts</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">1,400+</span>
+          <span class="trust-label">Verified Indigenous Partners</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">4.92 / 5</span>
+          <span class="trust-label">Average Traveler Rating</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. Problem Section
+       ========================================================================= -->
+  <section class="section-padding problem-section" id="problem">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">The Travel Dilemma</span>
+        <h2>Why Travel Planning Today is Complicated & Broken</h2>
+        <p>Planning a trip shouldn't feel like a second job. Millions of travelers end up overwhelmed, overcharged, and trapped in tourist circuses.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>40+ Open Browser Tabs</h3>
+          <p>Hours lost bouncing between conflicting travel blogs, outdated YouTube vlogs, and sponsored SEO articles that promote tourist traps.</p>
+          <div class="problem-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Avg. 18 hours wasted planning
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Generic Tourist Traps</h3>
+          <p>Commercial packages push you onto 50-person tour buses to overcrowded viewpoints, missing the authentic soul, food, and culture of the region.</p>
+          <div class="problem-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            Zero cultural personalization
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 16.9A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+              <line x1="13" y1="11" x2="13" y2="17"></line>
+              <line x1="13" y1="21" x2="13.01" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Static Plans vs Reality</h3>
+          <p>Sudden rainstorms, closed ghat roads, or massive holiday lines destroy rigid itineraries. Travelers are left stranded with no viable backup options.</p>
+          <div class="problem-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            No real-time flexibility
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3>Middleman Fee Exploitation</h3>
+          <p>Traditional aggregators take 30% to 45% cuts, leaving local tribal guides, family homestays, and regional cooks drastically underpaid.</p>
+          <div class="problem-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            Hidden 35%+ aggregator markups
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Solution Section
+       ========================================================================= -->
+  <section class="section-padding solution-section" id="solution">
+    <div class="section-container">
+      <div class="solution-grid">
+        <div class="solution-content">
+          <span class="section-badge blue">The LocalLens Breakthrough</span>
+          <h2>Autonomous AI Meets Indigenous Heartbeat</h2>
+          <p class="desc">
+            LocalLens replaces stressful manual coordination with an intelligent travel engine. By combining machine learning with live telemetry and a direct network of trusted local hosts, we generate seamless, living itineraries that evolve in real time.
+          </p>
+
+          <div class="solution-pillars">
+            <div class="solution-pillar-item">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div class="pillar-info">
+                <h4>Budget & Preference Optimization</h4>
+                <p>Calculates exact rupee allocations for transport, authentic meals, homestays, and activities based on your personal budget limit.</p>
+              </div>
+            </div>
+
+            <div class="solution-pillar-item">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div class="pillar-info">
+                <h4>Live Telemetry & 1-Tap Dynamic Replanning</h4>
+                <p>Constantly monitors localized rain, fog, and crowd densities. If conditions change, your schedule pivots gracefully to indoor or sunlit spots.</p>
+              </div>
+            </div>
+
+            <div class="solution-pillar-item">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="pillar-info">
+                <h4>Direct-to-Host Commerce</h4>
+                <p>Connect directly with licensed tribal naturalists, coffee plantation owners, and family homestays without exploitative middleman fees.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="solution-visual">
+          <div class="ai-engine-card">
+            <div class="ai-card-header">
+              <div>
+                <span class="ai-badge">⚡ Engine 2.4 Active</span>
+                <h4 style="color:#FFF; margin-top:0.4rem;">Hyperlocal Travel Synthesis</h4>
+              </div>
+              <span style="font-size:0.8rem; color:#94A3B8;">Status: Synced</span>
+            </div>
+
+            <div class="ai-process-flow">
+              <div class="flow-step">
+                <div class="flow-badge">01</div>
+                <div>
+                  <div class="flow-title">User Intent & Constraints</div>
+                  <div class="flow-sub">Budget: ₹3,500/day • 2 Days • Nature & Coffee</div>
+                </div>
+                <div class="flow-status">✓ Input Validated</div>
+              </div>
+
+              <div class="flow-step">
+                <div class="flow-badge">02</div>
+                <div>
+                  <div class="flow-title">Live Sensor & Telemetry Feed</div>
+                  <div class="flow-sub">Rain probability: 15% • Borra crowd index: 42 (Low)</div>
+                </div>
+                <div class="flow-status">✓ Live Ingest</div>
+              </div>
+
+              <div class="flow-step">
+                <div class="flow-badge">03</div>
+                <div>
+                  <div class="flow-title">Direct Local Partner Mesh</div>
+                  <div class="flow-sub">Matched: Guide Sanyasi Rao + Tyda Organic Roastery</div>
+                </div>
+                <div class="flow-status">✓ Verified Direct</div>
+              </div>
+            </div>
+
+            <div class="ai-output-preview">
+              <div class="ai-output-info">
+                <span class="output-title">Dynamic Itinerary Synthesized</span>
+                <span class="output-desc">100% personalized, zero commission, real-time fallback active</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.9rem;">Test Engine</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. Features Section (7 Cards)
+       ========================================================================= -->
+  <section class="section-padding features-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Core Capabilities</span>
+        <h2>Engineered for the Modern Indian Explorer</h2>
+        <p>LocalLens is built from the ground up to eliminate planning anxiety and unlock unforgettable, genuine grassroots experiences.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <span class="feature-tag">Smart Synthesis</span>
+          <h3>AI-Powered Itineraries</h3>
+          <p>Constraint-satisfaction AI sequences routes based on your exact arrival time, physical pacing, and interest affinities in under 30 seconds.</p>
+          <ul class="feature-highlights">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero duplicate transit loops</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Energy-aware morning & sunset pacing</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card blue">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <span class="feature-tag">Cost Transparency</span>
+          <h3>Budget-Friendly Travel</h3>
+          <p>Every itinerary comes with transparent rupee-by-rupee estimates. Experience rich travel through authentic local homestays and street eateries.</p>
+          <ul class="feature-highlights">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Save 30-40% vs commercial packages</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Transparent cost breakdowns per day</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <span class="feature-tag">Off-The-Beaten-Path</span>
+          <h3>Hidden Gems Discovery</h3>
+          <p>Uncover secret valley waterfalls, sacred groves, artisanal pottery hamlets, and organic coffee roasteries that don't appear on commercial travel blogs.</p>
+          <ul class="feature-highlights">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Curated by resident elders & naturalists</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Low crowd density guaranteed</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card blue">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+            </svg>
+          </div>
+          <span class="feature-tag">Micro-Climate Intelligence</span>
+          <h3>Real-Time Weather Updates</h3>
+          <p>Monitors micro-climate valley forecasts and alerts you in advance about sudden ghat downpours, thick morning mists, or temperature drops.</p>
+          <ul class="feature-highlights">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Hyperlocal valley rain probability</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Golden hour sunrise/sunset timing</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <span class="feature-tag">Live Congestion Data</span>
+          <h3>Traffic & Crowd Updates</h3>
+          <p>Avoid tour-bus bottlenecks. Our predictive traffic and crowd heatmaps ensure you visit iconic spots during peaceful, queue-free intervals.</p>
+          <ul class="feature-highlights">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Real-time ghat road status & clearance</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Borra Caves queue status live alerts</li>
+          </ul>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card blue">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+          </div>
+          <span class="feature-tag">Instant Recalculation</span>
+          <h3>Dynamic Replanning</h3>
+          <p>The magic button: if a waterfall is closed due to flash rain or your train is delayed, LocalLens reshuffles your itinerary in 1 tap with smart alternatives.</p>
+          <ul class="feature-highlights">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero manual re-booking headaches</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Auto-swaps outdoor treks to indoor crafts</li>
+          </ul>
+        </div>
+
+        <!-- Feature 7 (Wide banner card) -->
+        <div class="feature-card feature-card-wide">
+          <div>
+            <div class="feature-icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="11" cy="7" r="4"></circle>
+                <path d="M22 11l-3 3-2-2"></path>
+              </svg>
+            </div>
+            <span class="feature-tag">Direct Human Connection</span>
+            <h3>Local Guides & Verified Businesses</h3>
+            <p>Every guide, homestay host, and artisan on LocalLens is vetted in-person. We don't take commissions, meaning 100% of your activity spend empowers local tribal communities, women's cooperatives, and coffee farmers.</p>
+            <ul class="feature-highlights">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Certified regional naturalists & tribal historians</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct UPI / cash payments with zero middleman cuts</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Fair living wage compliance</li>
+            </ul>
+          </div>
+          <div class="feature-wide-img">
+            <img 
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop" 
+              alt="Local Indian artisan guide sharing tribal folklore and crafts" 
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. How It Works (3 Steps)
+       ========================================================================= -->
+  <section class="section-padding how-it-works-section" id="how-it-works">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Effortless Journey</span>
+        <h2>How LocalLens Works in 3 Simple Steps</h2>
+        <p>From a quick 60-second questionnaire to unforgettable memories on the ground.</p>
+      </div>
+
+      <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number-bubble">1</div>
+          <h3>Tell Us Your Trip</h3>
+          <p>Pick your destination, dates, budget limit, and travel vibe (nature, food, heritage, or adventure). No complex forms required.</p>
+          <div class="step-visual-box">
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Destination: Araku Valley</span>
+            </div>
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Vibe: Tribal Culture & Coffee</span>
+            </div>
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Cap: ₹3,500/day</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number-bubble">2</div>
+          <h3>Get Your AI Plan</h3>
+          <p>In 30 seconds, LocalLens synthesizes an optimal timeline with route coordinates, weather forecasts, and direct local host contacts.</p>
+          <div class="step-visual-box">
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>Route optimized for transit</span>
+            </div>
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Verified local homestays locked</span>
+            </div>
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dynamic weather fallback set</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number-bubble">3</div>
+          <h3>Explore Like a Local</h3>
+          <p>Travel with live dynamic alerts, offline digital pass, and direct on-ground support from resident hosts who welcome you like family.</p>
+          <div class="step-visual-box">
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Live crowd avoidance reminders</span>
+            </div>
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>1-Click replan if weather changes</span>
+            </div>
+            <div class="step-visual-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Zero-commission local payments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. Sample Trip Section (2-Day Araku Valley Trip)
+       ========================================================================= -->
+  <section class="section-padding sample-trip-section" id="sample-trip">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Live Interactive Showcase</span>
+        <h2>Sample Trip: 2-Day Araku Valley Immersion</h2>
+        <p>Experience how LocalLens balances budget, pristine nature, tribal culture, and indigenous food into an effortless weekend journey.</p>
+      </div>
+
+      <!-- Overview Hero Banner -->
+      <div class="sample-trip-hero-banner">
+        <div class="trip-banner-top">
+          <img 
+            src="https://images.unsplash.com/photo-1616489953149-808605553b6f?q=80&w=1600&auto=format&fit=crop" 
+            alt="Misty Araku Valley Eastern Ghats Coffee Hills" 
+            loading="lazy"
+          >
+          <div class="trip-banner-overlay">
+            <div class="trip-banner-badges">
+              <span class="trip-badge-pill">Eastern Ghats, Andhra Pradesh</span>
+              <span class="trip-badge-pill">🌿 Nature & Wilderness</span>
+              <span class="trip-badge-pill">☕ Organic Arabica</span>
+              <span class="trip-badge-pill">🪕 Tribal Heritage</span>
+            </div>
+            <h3>48 Hours in the Mist & Coffee Groves of Araku</h3>
+          </div>
+        </div>
+
+        <div class="trip-quick-stats-bar">
+          <div class="t-stat">
+            <span class="t-stat-label">Total Est. Budget</span>
+            <span class="t-stat-val green">₹4,200 <small style="font-size:0.75rem; color:#64748B;">/person all-incl.</small></span>
+          </div>
+          <div class="t-stat">
+            <span class="t-stat-label">Duration</span>
+            <span class="t-stat-val">2 Days / 1 Night</span>
+          </div>
+          <div class="t-stat">
+            <span class="t-stat-label">AI Efficiency</span>
+            <span class="t-stat-val">Saved 5.5 Hrs Transit</span>
+          </div>
+          <div class="t-stat">
+            <span class="t-stat-label">Local Impact</span>
+            <span class="t-stat-val green">94% Stays in Valley</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls: Day Switcher & Dynamic Replanning Toggle -->
+      <div class="trip-tab-controls">
+        <div class="day-tab-buttons">
+          <button class="day-tab-btn active" id="day1TabBtn">Day 1: Caves & Tribal Roots</button>
+          <button class="day-tab-btn" id="day2TabBtn">Day 2: Secret Falls & Brews</button>
+        </div>
+
+        <div class="replan-simulator-box">
+          <span>🌦️ Test AI Dynamic Replanning:</span>
+          <label class="replan-toggle" title="Toggle to simulate sudden rain alert at Katiki Waterfalls">
+            <input type="checkbox" id="replanToggle">
+            <span class="slider-switch"></span>
+          </label>
+          <span style="font-size:0.8rem; color:#78350F;">Simulate Rain Alert at Katiki Falls</span>
+        </div>
+      </div>
+
+      <!-- Timeline Content: Day 1 -->
+      <div class="timeline-card-list" id="day1Content">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">07:30 AM</span>
+            <span class="time-badge">Day 1</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Scenic Vistadome Train Ride through 58 Ghat Tunnels</h4>
+              <span class="detail-tag adventure">Scenic Transit</span>
+            </div>
+            <p class="timeline-desc">
+              Board the iconic glass-domed train from Vizag to Borra Guhalu. Travel along dramatic Eastern Ghats ravines, mountain bridges, and dense evergreen foliage.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Low Carbon Footprint</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Transit Cost: ₹150</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Glass-roof panoramic views</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">10:30 AM</span>
+            <span class="time-badge">Day 1</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Million-Year-Old Borra Caves Geological Trek</h4>
+              <span class="detail-tag nature">Geological Wonder</span>
+            </div>
+            <p class="timeline-desc">
+              Explore stalactites and stalagmites formed over millions of years along the Gosthani River. Led by certified local geologist naturalist Ramana.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> AI-Timed: Avoided 45m tourist queue</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Local Naturalist fee included</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">01:15 PM</span>
+            <span class="time-badge">Day 1</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Authentic Bamboo Chicken (Bongu Lo Kodi) Lunch</h4>
+              <span class="detail-tag food">Culinary Heritage</span>
+            </div>
+            <p class="timeline-desc">
+              Dine with indigenous cooks. Chicken marinated in forest herbs, stuffed in fresh green bamboo stalks, and roasted over slow wood coals with wild rice and ragi mudde.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero commercial oils or MSG</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Cost: ₹250 / person</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% tribal cooks revenue</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">03:45 PM</span>
+            <span class="time-badge">Day 1</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Araku Tribal Cultural Museum & Dhimsa Dance Workshop</h4>
+              <span class="detail-tag culture">Indigenous Arts</span>
+            </div>
+            <p class="timeline-desc">
+              Immerse yourself in centuries of Valmiki, Bagata, and Kondh tribal history. Experience an authentic Dhimsa folk rhythm session and support tribal handloom weavers.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Preserving endangered folk arts</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct artisan craft purchase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">06:30 PM</span>
+            <span class="time-badge">Day 1</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Padmapuram Pine Eco-Homestay & Campfire Stargazing</h4>
+              <span class="detail-tag nature">Eco Stay</span>
+            </div>
+            <p class="timeline-desc">
+              Check into a solar-powered wooden cottage nestled under pine trees. Enjoy a campfire session with organic tribal herbal coffee and valley stargazing.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Plastic-free verified property</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Night rate: ₹1,500 with breakfast</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Content: Day 2 (Hidden by default, toggled via JS) -->
+      <div class="timeline-card-list" id="day2Content" style="display:none;">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">06:00 AM</span>
+            <span class="time-badge">Day 2</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Galikonda Sunrise Expedition (Highest Peak in AP)</h4>
+              <span class="detail-tag adventure">Panoramic Vista</span>
+            </div>
+            <p class="timeline-desc">
+              Early morning 4x4 jeep drive to Galikonda Viewpoint at 4,320 feet above sea level. Watch the sun break through golden clouds over rolling Eastern Ghats ridges.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Cloud sea photography window</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Local tribal jeep cooperative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">08:30 AM</span>
+            <span class="time-badge">Day 2</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Organic Shade-Grown Arabica Plantation Cupping</h4>
+              <span class="detail-tag food">Coffee Culture</span>
+            </div>
+            <p class="timeline-desc">
+              Walk with grower Kameswara Rao through biodynamic coffee estates. Learn shade-grown harvesting beneath silver oaks and taste world-famous Araku Arabica cupping.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Fair Trade certified organic</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Fresh roast sampling included</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 (Dynamic Replan Target) -->
+        <div class="timeline-item" id="slotKatikiWaterfalls">
+          <div class="timeline-time-box">
+            <span class="time-slot">11:00 AM</span>
+            <span class="time-badge">Day 2 (Original)</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Hidden Katiki Waterfalls Trek & Forest Stream Dip</h4>
+              <span class="detail-tag nature">Hidden Gem</span>
+            </div>
+            <p class="timeline-desc">
+              Hike along the lesser-known forested trail to Katiki Falls through lush fern canopies. Timed precisely during the quiet morning window to avoid tourist jeeps. Crystal mountain water from Gosthani River.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Certified Naturalist Guide</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Crowd Density: Low (AI-Timed)</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Forest entry pass included</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">02:00 PM</span>
+            <span class="time-badge">Day 2</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Tyda Indigenous Bamboo Crafts & Wild Forest Honey Co-op</h4>
+              <span class="detail-tag culture">Tribal Artisans</span>
+            </div>
+            <p class="timeline-desc">
+              Visit Tyda hamlet to witness master artisans weaving sustainable bamboo baskets and natural wood artifacts. Purchase pure raw rock-bee honey directly from harvesters.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% money to tribal cooperative</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Ethical sustainably sourced honey</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="timeline-item">
+          <div class="timeline-time-box">
+            <span class="time-slot">05:00 PM</span>
+            <span class="time-badge">Day 2</span>
+          </div>
+          <div class="timeline-detail">
+            <div class="detail-header">
+              <h4>Sunset Ghat Descent with Fresh Estate Coffee Bags</h4>
+              <span class="detail-tag adventure">Farewell Trail</span>
+            </div>
+            <p class="timeline-desc">
+              Pack your memories and freshly roasted Arabica beans. Board your evening electric shuttle through scenic misty curves back towards Visakhapatnam railway station.
+            </p>
+            <div class="timeline-perks">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero plastic waste journey</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Trip completion rating: 5/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Budget Breakdown Pill Matrix -->
+      <div class="budget-breakdown-card">
+        <div class="budget-breakdown-header">
+          <div>
+            <h4 style="font-size:1.15rem; color:#0F172A;">Transparent Rupee Budget Breakdown</h4>
+            <span style="font-size:0.85rem; color:#64748B;">No surge markups, no hidden convenience charges.</span>
+          </div>
+          <span style="font-size:1.1rem; font-weight:800; color:#059669;">Total: ₹4,200 (You save ₹2,800 vs commercial packages)</span>
+        </div>
+
+        <div class="budget-pills-row">
+          <div class="b-pill">
+            <span class="b-pill-title">🏡 Eco Homestay (1 Night)</span>
+            <span class="b-pill-amt">₹1,500</span>
+          </div>
+          <div class="b-pill">
+            <span class="b-pill-title">🍲 Bamboo Meals & Coffee Tasting</span>
+            <span class="b-pill-amt">₹1,200</span>
+          </div>
+          <div class="b-pill">
+            <span class="b-pill-title">🚙 Shared Local Jeep & Guides</span>
+            <span class="b-pill-amt">₹1,100</span>
+          </div>
+          <div class="b-pill">
+            <span class="b-pill-title">🎟️ Caves, Museum & Forest Passes</span>
+            <span class="b-pill-amt">₹400</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. Destinations Explorer
+       ========================================================================= -->
+  <section class="section-padding destinations-section" id="destinations">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge blue">Incredible India</span>
+        <h2>Handcrafted AI Routes Across India</h2>
+        <p>From mist-laden valleys to ancient stone temples, experience destinations designed for immersive local discovery.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="destinations-filter-nav">
+        <button class="dest-filter-btn active" data-filter="all">All Destinations</button>
+        <button class="dest-filter-btn" data-filter="hills">Hill Valleys</button>
+        <button class="dest-filter-btn" data-filter="heritage">Heritage & Temples</button>
+        <button class="dest-filter-btn" data-filter="offbeat">Offbeat Hidden Gems</button>
+        <button class="dest-filter-btn" data-filter="coastal">Coastal Hamlets</button>
+      </div>
+
+      <div class="destinations-grid">
+        <!-- Destination 1: Araku Valley -->
+        <div class="dest-card" data-category="hills">
+          <div class="dest-img-box">
+            <img src="https://images.unsplash.com/photo-1596405344148-2d0ae589c372?q=80&w=800&auto=format&fit=crop" alt="Araku Valley coffee estates" loading="lazy">
+            <span class="dest-tag-badge">Eastern Ghats</span>
+            <span class="dest-budget-badge">From ₹1,900/day</span>
+          </div>
+          <div class="dest-info">
+            <span class="dest-state">Andhra Pradesh</span>
+            <h3 class="dest-title">Araku Valley & Borra</h3>
+            <p class="dest-summary">Mist-wrapped coffee plantations, millions of years old stalactite caves, and rich tribal heritage nestled in emerald valleys.</p>
+            <div class="dest-footer">
+              <span>⏱️ 2–3 Days</span>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.8rem;">Plan Trip</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 2: Munnar -->
+        <div class="dest-card" data-category="hills">
+          <div class="dest-img-box">
+            <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800&auto=format&fit=crop" alt="Munnar Tea hills and mist" loading="lazy">
+            <span class="dest-tag-badge">Western Ghats</span>
+            <span class="dest-budget-badge">From ₹2,400/day</span>
+          </div>
+          <div class="dest-info">
+            <span class="dest-state">Kerala</span>
+            <h3 class="dest-title">Munnar High Ranges</h3>
+            <p class="dest-summary">Endless emerald tea slopes, secret spice garden walks, and high-altitude wildlife trails avoiding commercial tourist buses.</p>
+            <div class="dest-footer">
+              <span>⏱️ 3–4 Days</span>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.8rem;">Plan Trip</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 3: Spiti Valley -->
+        <div class="dest-card" data-category="offbeat">
+          <div class="dest-img-box">
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop" alt="Spiti Valley Himalayas mountain monastery" loading="lazy">
+            <span class="dest-tag-badge">High Altitude</span>
+            <span class="dest-budget-badge">From ₹2,800/day</span>
+          </div>
+          <div class="dest-info">
+            <span class="dest-state">Himachal Pradesh</span>
+            <h3 class="dest-title">Spiti Valley Trail</h3>
+            <p class="dest-summary">High-altitude Buddhist monasteries, fossil villages, homestays with Ladakhi tea, and crystal clear night skies for astrophotography.</p>
+            <div class="dest-footer">
+              <span>⏱️ 6–7 Days</span>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.8rem;">Plan Trip</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 4: Hampi -->
+        <div class="dest-card" data-category="heritage">
+          <div class="dest-img-box">
+            <img src="https://images.unsplash.com/photo-1600100397608-f010f443a6d7?q=80&w=800&auto=format&fit=crop" alt="Hampi ancient boulder ruins and temple chariot" loading="lazy">
+            <span class="dest-tag-badge">UNESCO Heritage</span>
+            <span class="dest-budget-badge">From ₹1,800/day</span>
+          </div>
+          <div class="dest-info">
+            <span class="dest-state">Karnataka</span>
+            <h3 class="dest-title">Hampi Stone Kingdom</h3>
+            <p class="dest-summary">Walk among 14th-century Vijayanagara empires, coracle rides on the Tungabhadra, bouldering, and riverside sunset cafes.</p>
+            <div class="dest-footer">
+              <span>⏱️ 3 Days</span>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.8rem;">Plan Trip</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 5: Ziro Valley -->
+        <div class="dest-card" data-category="offbeat">
+          <div class="dest-img-box">
+            <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800&auto=format&fit=crop" alt="Ziro Valley rice fields and bamboo huts" loading="lazy">
+            <span class="dest-tag-badge">Tribal Heart</span>
+            <span class="dest-budget-badge">From ₹2,200/day</span>
+          </div>
+          <div class="dest-info">
+            <span class="dest-state">Arunachal Pradesh</span>
+            <h3 class="dest-title">Ziro Valley Apatani Trail</h3>
+            <p class="dest-summary">Paddy-cum-fish farming, indigenous Apatani sustainable architecture, pine forests, and home-cooked organic meals with village elders.</p>
+            <div class="dest-footer">
+              <span>⏱️ 4–5 Days</span>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.8rem;">Plan Trip</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 6: Gokarna -->
+        <div class="dest-card" data-category="coastal">
+          <div class="dest-img-box">
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop" alt="Gokarna secluded cliff beach and sea" loading="lazy">
+            <span class="dest-tag-badge">Coastal Cliffs</span>
+            <span class="dest-budget-badge">From ₹1,600/day</span>
+          </div>
+          <div class="dest-info">
+            <span class="dest-state">Karnataka</span>
+            <h3 class="dest-title">Gokarna Secluded Coves</h3>
+            <p class="dest-summary">Cliff-top beach treks, hidden crescent coves, bioluminescent waves, and quiet family shack seafood away from commercial beaches.</p>
+            <div class="dest-footer">
+              <span>⏱️ 3 Days</span>
+              <button class="btn btn-primary btn-sm btn-open-planner" style="padding:0.4rem 0.8rem;">Plan Trip</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. "Why LocalLens?" Comparison Section
+       ========================================================================= -->
+  <section class="section-padding why-section" id="why-us">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">The Clear Advantage</span>
+        <h2>Why Travelers Are Choosing LocalLens</h2>
+        <p>A side-by-side comparison between old-school travel packages, generic social media blogs, and LocalLens AI.</p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="col-feature">Feature</th>
+              <th class="col-traditional">Traditional OTAs & Tours</th>
+              <th class="col-generic">Instagram & Generic Blogs</th>
+              <th class="col-locallens">LocalLens AI <span class="locallens-badge-header">Recommended</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="feature-name">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  Customization Speed
+                </span>
+              </td>
+              <td><span class="status-icon-bad">✕</span> Rigid, fixed group schedules</td>
+              <td><span class="status-icon-warn">⚠️</span> 20+ hours manual spreadsheet work</td>
+              <td class="col-locallens"><span class="status-icon-good">✓</span> <strong>100% Hyper-personalized in 30s</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="feature-name">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                  Dynamic Weather Shifts
+                </span>
+              </td>
+              <td><span class="status-icon-bad">✕</span> Ruined plans, no refunds given</td>
+              <td><span class="status-icon-bad">✕</span> You're stranded in the rain</td>
+              <td class="col-locallens"><span class="status-icon-good">✓</span> <strong>Automatic 1-Tap Dynamic Replanning</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="feature-name">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  Local Community Support
+                </span>
+              </td>
+              <td><span class="status-icon-bad">✕</span> 35-45% cuts to corporate aggregators</td>
+              <td><span class="status-icon-warn">⚠️</span> Unverified commercial recommendations</td>
+              <td class="col-locallens"><span class="status-icon-good">✓</span> <strong>92%+ direct to local hosts & artisans</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="feature-name">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  Hidden Gems vs Crowds
+                </span>
+              </td>
+              <td><span class="status-icon-bad">✕</span> Pushes you to overcrowded tourist traps</td>
+              <td><span class="status-icon-warn">⚠️</span> Hyped viral spots overrun by reels</td>
+              <td class="col-locallens"><span class="status-icon-good">✓</span> <strong>Crowd dispersion & secret local spots</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="feature-name">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  Pricing Transparency
+                </span>
+              </td>
+              <td><span class="status-icon-bad">✕</span> Hidden surge fees, convenience charges</td>
+              <td><span class="status-icon-bad">✕</span> Prices unknown until arrival</td>
+              <td class="col-locallens"><span class="status-icon-good">✓</span> <strong>Clear rupee-precise daily allocations</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="feature-name">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="11" cy="7" r="4"></circle><path d="M22 11l-3 3-2-2"></path></svg>
+                  Verified On-Ground Safety
+                </span>
+              </td>
+              <td><span class="status-icon-warn">⚠️</span> Outsourced to third-party sub-agencies</td>
+              <td><span class="status-icon-bad">✕</span> No verification whatsoever</td>
+              <td class="col-locallens"><span class="status-icon-good">✓</span> <strong>100% in-person vetted guides & hosts</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. Local Business Partners Section
+       ========================================================================= -->
+  <section class="section-padding partners-section" id="partners">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Local Grassroots Network</span>
+        <h2>Partnering Directly With Local Champions</h2>
+        <p>We work hand-in-hand with the real guardians of Indian hospitality — the guides, cooks, artisans, and families who make each place special.</p>
+      </div>
+
+      <div class="partner-categories-grid">
+        <div class="partner-category-card">
+          <div class="partner-cat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="11" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>Licensed Local Guides</h3>
+          <p>Tribal elders, certified naturalists, and history scholars who reveal stories no guidebook can print.</p>
+        </div>
+
+        <div class="partner-category-card">
+          <div class="partner-cat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+          </div>
+          <h3>Authentic Heritage Eateries</h3>
+          <p>Family-run wood-fire kitchens, organic coffee roasters, and traditional tribal bamboo cooking collectives.</p>
+        </div>
+
+        <div class="partner-category-card">
+          <div class="partner-cat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <h3>Eco-Homestays</h3>
+          <p>Authentic farmstays and village homes practicing solar energy, rainwater harvesting, and zero-plastic hospitality.</p>
+        </div>
+
+        <div class="partner-category-card">
+          <div class="partner-cat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <h3>Indigenous Artisans</h3>
+          <p>Master potters, bamboo weavers, and organic honey gatherers preserving living ancestral traditions.</p>
+        </div>
+      </div>
+
+      <!-- Partner Spotlight Box -->
+      <div class="partner-spotlight-box">
+        <div class="partner-spotlight-text">
+          <span class="section-badge" style="margin-bottom:0.75rem;">Fair Wage Guarantee</span>
+          <h3>Zero Platform Fees for Indigenous Hosts</h3>
+          <p>
+            Unlike multinational travel portals that siphon 35% of every transaction, LocalLens ensures that local guides and homestay owners retain over 90% of their earnings. We equip them with digital booking tools, multilingual AI translation, and transparent payments.
+          </p>
+
+          <div class="partner-metrics-list">
+            <div class="p-metric">
+              <span class="p-metric-val">1,400+</span>
+              <span class="p-metric-label">Vetted Local Businesses</span>
+            </div>
+            <div class="p-metric">
+              <span class="p-metric-val">₹2.4 Cr</span>
+              <span class="p-metric-label">Paid Directly to Communities</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-cta-card">
+          <h4>Are You a Local Guide or Business?</h4>
+          <p>Join India's fastest growing community of certified independent tourism providers. Get high-intent travelers with 0% platform fee for your first 6 months.</p>
+          <button class="btn btn-primary btn-block btn-open-partner-modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="11" cy="7" r="4"></circle>
+              <polyline points="17 8 19 10 23 6"></polyline>
+            </svg>
+            Apply as Local Partner
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. Sustainability Section
+       ========================================================================= -->
+  <section class="section-padding sustainability-section" id="sustainability">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Responsible Tourism</span>
+        <h2>Protecting the Places & People We Love</h2>
+        <p>Sustainable travel isn't a marketing buzzword at LocalLens. It is hardcoded into our recommendation algorithms.</p>
+      </div>
+
+      <div class="sustainability-grid">
+        <div class="eco-card">
+          <div class="eco-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3>Crowd Dispersion</h3>
+          <p>Our algorithms actively divert traveler flow away from ecologically vulnerable peaks during peak holidays, preventing trail erosion.</p>
+          <div class="eco-impact-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            -42% Peak pressure on trails
+          </div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Zero Single-Use Plastics</h3>
+          <p>Every homestay and tour partner signs the LocalLens Green Charter, providing filtered mountain spring water and leaf plates.</p>
+          <div class="eco-impact-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            120,000+ plastic bottles averted
+          </div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Direct Village Economy</h3>
+          <p>Keeping wealth inside indigenous tribal councils instead of offshore hotel conglomerates, fostering grassroots preservation.</p>
+          <div class="eco-impact-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            94% of spend remains local
+          </div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Low-Emission Transit</h3>
+          <p>Prioritizes Indian Railways Vistadome trains and shared electric valley shuttles over private gas-guzzling single-occupant cabs.</p>
+          <div class="eco-impact-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            3.2 Tonnes CO₂ saved monthly
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. Final CTA Banner
+       ========================================================================= -->
+  <section class="final-cta-section">
+    <div class="section-container">
+      <div class="cta-banner-box">
+        <div class="cta-banner-content">
+          <h2>Ready to Explore Differently?</h2>
+          <p>
+            Skip the 40 browser tabs and generic cookie-cutter tours. Experience real India with an AI-crafted itinerary built for your exact budget and travel style.
+          </p>
+          <div class="cta-banner-actions">
+            <button class="btn btn-primary btn-lg btn-open-planner">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Plan My Trip (Free)
+            </button>
+            <a href="#destinations" class="btn btn-ghost-white btn-lg">
+              Explore All 24+ Routes
+            </a>
+          </div>
+          <div class="cta-perks">
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Instant Free Synthesis</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Verified Local Hosts</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Dynamic Weather Protection</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       13. Contact & FAQ Section
+       ========================================================================= -->
+  <section class="section-padding contact-section" id="contact">
+    <div class="section-container">
+      <div class="contact-layout-grid">
+        <!-- FAQ Side -->
+        <div class="faq-box">
+          <span class="section-badge blue">Got Questions?</span>
+          <h3>Frequently Asked Questions</h3>
+          
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How does LocalLens AI create my itinerary?</span>
+                <span class="faq-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  LocalLens matches your trip duration, budget, and travel preferences against our verified local partner database and live telemetry (weather, road conditions, crowd densities). It optimizes your route so you spend minimum time in transit and maximum time enjoying local culture.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How does Dynamic Replanning work on the ground?</span>
+                <span class="faq-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  If our satellite feed detects high rain probability, road closures, or unmanageable crowds at your planned spot (e.g. Katiki Falls), the app sends an instant alert and offers a 1-tap swap to a verified indoor or alternative experience (e.g. artisanal coffee cupping or pottery workshops) with zero extra hassle.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Are the local guides and homestays verified?</span>
+                <span class="faq-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes, 100%. Every guide, jeep driver, homestay host, and food partner is audited in-person by our regional operations team for safety, fair-wage practices, hygienic standards, and authentic local knowledge.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Does LocalLens work offline without cellular data?</span>
+                <span class="faq-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes. Once your trip plan is generated, you can download a complete offline dynamic pass including turn-by-turn directions, host phone numbers, emergency protocols, and tickets that work without mobile network.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do payments work? Is there any hidden fee?</span>
+                <span class="faq-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Planning on LocalLens is 100% free for travelers. When booking local services, payments go directly to the verified hosts via UPI or cash on arrival. We charge zero hidden commissions or convenience markups.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Side -->
+        <div class="contact-form-card">
+          <h3>Get in Touch</h3>
+          <p>Have custom corporate retreat inquiries, partnership questions, or special travel needs? Let us know.</p>
+
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Full Name</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Mythili Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="name@domain.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactDestination">Destination of Interest</label>
+              <select id="contactDestination" class="form-select">
+                <option value="Araku Valley">Araku Valley, Andhra Pradesh</option>
+                <option value="Munnar">Munnar, Kerala</option>
+                <option value="Spiti Valley">Spiti Valley, Himachal Pradesh</option>
+                <option value="Hampi">Hampi, Karnataka</option>
+                <option value="Ziro Valley">Ziro Valley, Arunachal Pradesh</option>
+                <option value="Custom Route">Other Custom Offbeat Trail</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Tell Us About Your Travel Plans</label>
+              <textarea id="contactMessage" class="form-textarea" rows="4" placeholder="Dates, group size, specific interests (nature, food, tribal culture), or questions..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="padding:1rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Send Travel Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       14. Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo" aria-label="LocalLens Tourism">
+            <div class="brand-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </div>
+            <span>Local<span class="highlight">Lens</span></span>
+          </a>
+          <p class="footer-desc">
+            LocalLens is an AI-powered tourism platform crafting hyper-personalized, budget-friendly and dynamic travel itineraries across authentic India.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Platform -->
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="#features">AI Itineraries</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#sample-trip">Araku 2-Day Sample</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#why-us">Why LocalLens</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: For Travelers -->
+        <div class="footer-col">
+          <h4>Travelers</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" class="btn-open-planner">Trip Planner Modal</a></li>
+            <li><a href="#sustainability">Responsible Tourism</a></li>
+            <li><a href="#sample-trip">Dynamic Replanning</a></li>
+            <li><a href="#contact">Emergency Support</a></li>
+            <li><a href="#contact">Traveler Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: For Partners -->
+        <div class="footer-col">
+          <h4>Partners</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" class="btn-open-partner-modal">Local Guide Network</a></li>
+            <li><a href="#" class="btn-open-partner-modal">Homestay Enrollment</a></li>
+            <li><a href="#" class="btn-open-partner-modal">Tribal Artisan Co-ops</a></li>
+            <li><a href="#" class="btn-open-partner-modal">0% Fee Charter</a></li>
+            <li><a href="#contact">Partner Portal Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter -->
+        <div class="footer-col">
+          <h4>Offbeat Dispatch</h4>
+          <p class="footer-newsletter-text">Get curated weekly secret spots, seasonal festival trails, and unreleased AI routes in your inbox.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 LocalLens Tourism Technologies Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Responsible Travel Charter</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Modal 1: AI Trip Generator Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="aiPlannerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="closeAiModal" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div id="modalFormBox">
+        <div style="margin-bottom:1.5rem;">
+          <span class="section-badge">✨ Generative Engine</span>
+          <h3 id="modalTitle" style="font-size:1.75rem; margin-top:0.35rem;">Plan Your Custom Journey</h3>
+          <p style="color:#64748B; font-size:0.95rem;">Configure your preferences to synthesize an authentic, dynamic itinerary.</p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+          <div class="form-group">
+            <label for="modalDestSelect">Destination</label>
+            <select id="modalDestSelect" class="form-select">
+              <option value="Araku Valley, Andhra Pradesh">Araku Valley, Andhra Pradesh</option>
+              <option value="Munnar & Western Ghats, Kerala">Munnar & Western Ghats, Kerala</option>
+              <option value="Spiti Valley, Himachal Pradesh">Spiti Valley, Himachal Pradesh</option>
+              <option value="Hampi Heritage, Karnataka">Hampi Heritage, Karnataka</option>
+              <option value="Ziro Valley, Arunachal Pradesh">Ziro Valley, Arunachal Pradesh</option>
+              <option value="Gokarna Coastal, Karnataka">Gokarna Coastal, Karnataka</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="modalDaysInput">Number of Days</label>
+              <input type="number" id="modalDaysInput" class="form-input" min="1" max="14" value="2">
+            </div>
+            <div class="form-group">
+              <label for="modalBudgetSelect">Budget Tier</label>
+              <select id="modalBudgetSelect" class="form-select">
+                <option value="₹1,800/day (Backpacker)">₹1,800/day (Backpacker)</option>
+                <option value="₹3,500/day (Explorer)" selected>₹3,500/day (Explorer)</option>
+                <option value="₹6,000/day (Eco-Comfort)">₹6,000/day (Eco-Comfort)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Travel Vibes (Select Focus)</label>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.25rem;">
+              <span class="quick-tag-btn active">🌿 Nature & Waterfalls</span>
+              <span class="quick-tag-btn">🪕 Tribal Culture</span>
+              <span class="quick-tag-btn">☕ Coffee & Local Food</span>
+              <span class="quick-tag-btn">🧗 Hiking & Adventure</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-lg" id="runAiGenBtn" style="margin-top:0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            Synthesize My AI Itinerary
+          </button>
+        </div>
+      </div>
+
+      <!-- AI Simulation Progress State -->
+      <div class="ai-sim-progress" id="aiSimProgress">
+        <div class="sim-loader-spinner"></div>
+        <div class="sim-step-text" id="simStepText">Connecting to Local Data Mesh...</div>
+        <div class="sim-step-sub" id="simStepSub">Analyzing live satellite weather & verified homestay hosts...</div>
+      </div>
+
+      <!-- AI Simulation Result State -->
+      <div class="ai-sim-result" id="aiSimResult"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Modal 2: Partner With Us Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="partnerModal" role="dialog" aria-modal="true" aria-labelledby="partnerModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="closePartnerModal" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div>
+        <div style="margin-bottom:1.5rem;">
+          <span class="section-badge">🤝 Community Network</span>
+          <h3 id="partnerModalTitle" style="font-size:1.75rem; margin-top:0.35rem;">Join LocalLens Partner Network</h3>
+          <p style="color:#64748B; font-size:0.95rem;">Empower your tourism business with direct high-intent bookings and 0% platform fee.</p>
+        </div>
+
+        <form id="partnerApplicationForm">
+          <div class="form-group">
+            <label for="pName">Contact Person Name</label>
+            <input type="text" id="pName" class="form-input" placeholder="e.g. Sanyasi Rao" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pPhone">Phone Number / WhatsApp</label>
+              <input type="tel" id="pPhone" class="form-input" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label for="pType">Business Category</label>
+              <select id="pType" class="form-select">
+                <option value="Guide">Certified Local / Tribal Guide</option>
+                <option value="Homestay">Eco-Homestay / Farmstay</option>
+                <option value="Food">Authentic Eatery / Coffee Estate</option>
+                <option value="Artisan">Handicraft / Artisan Cooperative</option>
+                <option value="Transport">Local Shared Jeep Cooperative</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pLocation">Operating Region / Hamlet</label>
+            <input type="text" id="pLocation" class="form-input" placeholder="e.g. Tyda Village, Araku Valley" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:0.5rem;">
+            Submit Partner Application
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
